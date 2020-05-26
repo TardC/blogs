@@ -25,5 +25,20 @@ cond_fofa(yes)->success
 cond_build(yes)->success
 ```
 
+```flow
+start=>start: 确定漏洞环境
+cond_vulrange=>condition: 靶场是否有相关环境
+cond_dockerhub=>condition: DockerHub 是否有相关环境
+cond_fofa=>condition: FOFA 能否搜索到相关环境
+cond_build=>condition: 本地（或虚拟机）能否搭建成功
+fail=>end: 获取漏洞环境失败
+success=>end: 获取漏洞环境成功
+start->cond_vulrange(no, down)->cond_dockerhub(no, down)->cond_fofa(no, down)->cond_build(no, down)->fail
+cond_vulrange(yes)->success
+cond_dockerhub(yes)->success
+cond_fofa(yes)->success
+cond_build(yes)->success
+```
+
 
 
