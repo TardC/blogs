@@ -11,7 +11,7 @@ cond(no)->sub(right)->op
 ```
 
 ```flow
-start=>start: Start
+start=>start: 确定漏洞环境
 cond_vulrange=>condition: 靶场是否有相关环境？
 cond_dockerhub=>condition: Docker Hub 是否有相关环境？
 cond_fofa=>condition: FOFA 能否搜索到相关环境？
